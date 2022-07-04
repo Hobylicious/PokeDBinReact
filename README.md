@@ -1,11 +1,8 @@
 # PokeDBinReact
-### Your group members and scrum leader (if applicable) 
-
-### Your project idea 
 This is a multi-use pokédex. 
 It will allow users to create personalized 6-poké teams for each game version (red, blue, gold, etc..), along with having a default national pokédex, and a personalized game pokédex
 
-### Your tech stack (frontend, backend, database)
+### Tech-Stack (frontend, backend, database)
 Frontend - React
 Backend - JavaScript
 Database - Mongo
@@ -21,15 +18,14 @@ Users:
 Pokemon:
 
 - name
+- image
 - type(s)
 - game caught/found in
 - on personal team
 
 ### React component hierarchy (if applicable)
 Header
-
 Main
-
 - Homepage
 - Nav Bar
 - Search Form
@@ -38,12 +34,9 @@ Main
 - individual game dex
 - user sign up
 - update pokémon (add to team, remove from team, add to game dex)
-
 Footer
 
-
 ### User stories
-
 - Any site visitor will be able to see the national pokédex of all pokémon
 - Users will be able to create a login, sign in, and sign out
 - When signed in, users can create a personal team/favourites
@@ -65,7 +58,6 @@ This is the page for a specific pokémon, you will be able to add it to your tea
 
 ### Anything else your squad lead should know
 Stretch Goals
-
 - Add in a *shiny* option to indicate if the pokemon added to a game dex is also shiny
 - have a list of favourite pokemon per user
 - have site admin's
