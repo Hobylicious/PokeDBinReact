@@ -5,9 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Edit from './Components/Edit';
 import Homepage from './Components/Homepage';
-import Red from './Components/Red';
-import Blue from './Components/Blue';
-import Yellow from './Components/Yellow';
+import GameSelector from './Components/GameSelector';
 import PokemonRouter from './Components/PokemonRouter';
 
 import {
@@ -15,6 +13,7 @@ import {
   Routes,
   Route
 } from 'react-router-dom';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,9 +24,12 @@ root.render(
           <Route index element={<Homepage />} />
           <Route path=":id" element={<Edit />} />
         </ Route>
-        <Route path="red" element={<Red />} />
-        <Route path="blue" element={<Blue />} />
-        <Route path="yellow" element={<Yellow />} />
+        <Route path="red" element={<GameSelector />} />
+        <Route path="blue" element={<GameSelector />} />
+        <Route path="yellow" element={<GameSelector />} />
+        <Route path="gold" element={<GameSelector />} />
+        <Route path="silver" element={<GameSelector />} />
+        <Route path="crystal" element={<GameSelector />} />
 
 
       </ Route>

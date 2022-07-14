@@ -7,7 +7,7 @@ import { BrowserRouter, Link, Outlet } from 'react-router-dom';
 const App = () => {
   return (
     <div>
-      <nav
+      <nav className="nav-bar"
         style={{
           borderBottom: "solid 1px",
           paddingBottom: "1rem",
@@ -18,6 +18,9 @@ const App = () => {
         <Link to="/red">Red</Link>
         <Link to="/blue">Blue</Link>
         <Link to="/yellow">Yellow</Link>
+        <Link to="/gold">Gold</Link>
+        <Link to="/silver">Silver</Link>
+        <Link to="/crystal">Crystal</Link>
 
       </nav>
       <Outlet />
