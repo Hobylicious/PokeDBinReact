@@ -1,10 +1,24 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Navigate, Outlet, useNavigate } from 'react-router-dom'
+import { useAuth0 } from '@auth0/auth0-react'
+
 
 function Auth() {
+    const navigate = useNavigate()
+    const { getAccessTokenSilently } = useAuth0();
+    const getAuthState = async () => {
+        try {
+            const token = await getAccessTokenSilently()
+        }
+        catch { navigate('/login') }
+
+    }
+
+    useEffect(() => {
+        getAuthState();
+    }, []);
+
     return (
-        // check if they are logged in, if yes go to home page
-        //if not force login
         <div><Outlet /></div>
     )
 }

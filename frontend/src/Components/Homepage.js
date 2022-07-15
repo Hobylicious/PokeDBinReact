@@ -8,9 +8,9 @@ function Homepage() {
 
     const getPokemon = async () => {
         try {
-            // const baseURL = `https://pokemondb117.herokuapp.com/pokemon/api`
+            const baseURL = `https://pokemondb117.herokuapp.com/pokemon/api`
             const url = `/all`
-            const baseURL = `http://localhost:3001/pokemon/api`
+            // const baseURL = `http://localhost:3001/pokemon/api`
             console.log(url);
             const res = await axios({ url, responseType: "json", baseURL });
             console.log(res.data);

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Auth0Provider } from '@auth0/auth0-react',
+import { Auth0Provider } from '@auth0/auth0-react';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -23,7 +23,7 @@ root.render(
   <Auth0Provider
     domain="dev-60htjm5z.us.auth0.com"
     clientId='kQ9n67jGKQxns6hUz0z2E2E9r3m7yXIH'
-    redirectUri={`${window.location.origin}/pokemon`}
+    redirectUri={`${window.location.origin}`}
   >
     <BrowserRouter>
       <Routes>

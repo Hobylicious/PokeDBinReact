@@ -12,8 +12,8 @@ function GameSelector() {
     const getPokemon = async () => {
         try {
             console.log('here')
-            // const baseURL = `https://pokemondb117.herokuapp.com/pokemon/api`
-            const baseURL = `http://localhost:3001/pokemon/api/game`
+            const baseURL = `https://pokemondb117.herokuapp.com/pokemon/api/game`
+            // const baseURL = `http://localhost:3001/pokemon/api/game`
             const res = await axios({ url: locationPath, responseType: "json", baseURL });
             console.log(res.data);
             setPokemon(res.data.pokemons)

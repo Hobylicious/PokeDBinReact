@@ -2,9 +2,12 @@ import React from 'react';
 import './App.css';
 import axios from 'axios';
 import Homepage from './Components/Homepage';
+import { useAuth0 } from "@auth0/auth0-react"
 import { BrowserRouter, Link, Outlet } from 'react-router-dom';
 
 const App = () => {
+  const { logout } = useAuth0();
+
   return (
     <div>
       <nav className="nav-bar"
@@ -21,6 +24,9 @@ const App = () => {
         <Link to="/gold">Gold</Link>
         <Link to="/silver">Silver</Link>
         <Link to="/crystal">Crystal</Link>
+        <button className="logout" onClick={() => logout({ returnTo: window.location.origin })}>
+          Log Out
+        </button>
 
       </nav>
       <Outlet />
