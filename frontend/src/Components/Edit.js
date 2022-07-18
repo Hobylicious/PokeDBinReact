@@ -53,7 +53,7 @@ function Edit() {
             const res = await axios({ url, responseType: "json", baseURL });
             const dex = res.data
             const dexEntry = dex.pokemon.find(entry => entry.pokemonId === poke._id)
-            console.log(`pokemon: ${JSON.stringify(poke, null, 2)}`);
+            console.log(`pokemon: ${JSON.stringify(dexEntry, null, 2)}`);
             setPokedex(dex);
             setPokedexEntry(dexEntry ? dexEntry : getDefaultEntry(poke._id));
         }
@@ -71,12 +71,15 @@ function Edit() {
         e.preventDefault();
         try {
             const baseURL = `https://pokemondb117.herokuapp.com/pokemon/api/pokedex`
-            const url = `/${pokemon._id}`
+            const url = `/${pokedex._id}`
             // const baseURL = `http://localhost:3001/pokemon/api/edit`
             console.log(pokemon);
-            const existingEntry = pokedex.pokemon.find(entry => entry.pokemonId === pokemon._id)
-            if (!existingEntry) {
+            const existingEntry = pokedex.pokemon.indexOf(entry => entry.pokemonId === pokemon._id)
+            if (existingEntry === -1) {
                 pokedex.pokemon.push(pokedexEntry)
+            }
+            else {
+                pokedex.pokemon[existingEntry] = pokedexEntry
             }
             console.log(pokedex)
             const res = await axios({ url, responseType: "json", baseURL, method: 'put', data: pokedex });
@@ -94,7 +97,7 @@ function Edit() {
     const handleChange = (e, gameName, prop) => {
         const game = pokedexEntry.games.find((gamer) => gamer.name === gameName)
         game[prop] = !game[prop];
-        setPokemon({ ...pokemon })
+        setPokedexEntry({ ...pokedexEntry })
         console.log(pokemon);
     }
 
