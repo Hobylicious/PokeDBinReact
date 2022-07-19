@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import axios from 'axios';
-import Auth from './Components/Auth';
 import { useAuth0 } from '@auth0/auth0-react';
 
 function GameSelector() {
@@ -14,12 +13,12 @@ function GameSelector() {
 
     const getPokemon = async () => {
         try {
-            console.log('here')
-            const baseURL = `https://pokemondb117.herokuapp.com/pokemon/api/game/${locationPath}`
+            console.log(user)
+            const baseURL = `https://pokemondb117.herokuapp.com/pokemon/api/game${locationPath}`
             // const baseURL = `http://localhost:3001/pokemon/api/game`
-            const res = await axios({ url: user.sub, responseType: "json", baseURL });
+            const res = await axios({ url: user.sub.split('|')[1], responseType: "json", baseURL });
             console.log(res.data);
-            setPokemon(res.data.pokemons)
+            setPokemon(res.data)
 
         } catch (e) {
             console.log(e);

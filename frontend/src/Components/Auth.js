@@ -5,10 +5,12 @@ import { useAuth0 } from '@auth0/auth0-react'
 
 function Auth() {
     const navigate = useNavigate()
-    const { getAccessTokenSilently } = useAuth0();
+    const { getAccessTokenSilently, user } = useAuth0();
     const getAuthState = async () => {
         try {
             const token = await getAccessTokenSilently()
+            // localStorage.setItem(Auth0Id, user.sub)
+            console.log(user)
         }
         catch { navigate('/login') }
 

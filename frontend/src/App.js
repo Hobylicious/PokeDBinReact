@@ -17,7 +17,6 @@ const App = () => {
         }}
       >
         <Link to="/pokemon">Homepage</Link>
-        <Link to="/user-pokedex">Your Pokédex</Link>
         <Link to="/red">Red</Link>
         <Link to="/blue">Blue</Link>
         <Link to="/yellow">Yellow</Link>
